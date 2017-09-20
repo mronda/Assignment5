@@ -15,25 +15,25 @@
 
           https://github.com/paulyoder/angular-bootstrap-show-errors
        -->
-      <form name="listingForm" class="form-horizontal" ng-submit="update(listingForm.$valid)">
+      <form name="listingForm" class="form-horizontal" ng-submit="update(listingForm.$valid, listing)">
         <fieldset>
           <div class="form-group" show-errors>
-            <label for="name">Name</label>
-            <input name="name" type="text" ng-model="name" id="name" class="form-control" value={{listing.name}} placeholder={{listing.name}} required>
+            <label for="name">Name (Now: {{listing.name}})</label>
+            <input name="name" type="text" ng-model="name" id="name" class="form-control" placeholder="Name" required>
             <div ng-messages="listingForm.name.$error" role="alert">
               <p class="help-block error-text" ng-message="required">Listing name is required</p>
             </div>
           </div>
           <div class="form-group" show-errors>
-            <label for="code">Code</label>
-            <input name="code" type="text" ng-model="code" id="code" class="form-control" value={{listing.code}} placeholder={{listing.code}} required>
+            <label for="code">Code (Now: {{listing.code}})</label>
+            <input name="code" type="text" ng-model="code" id="code" class="form-control" placeholder="Code" required>
             <div ng-messages="listingForm.code.$error" role="alert">
               <p class="help-block error-text" ng-message="required">Listing code is required</p>
             </div>
           </div>
           <div class="form-group">
-            <label for="address">Address</label>
-            <input name="address" type="text" ng-model="address" id="address" class="form-control" value={{listing.address}} placeholder={{listing.address}}>
+            <label for="address">Address (Now: {{listing.address}})</label>
+            <input name="address" type="text" ng-model="address" id="address" class="form-control" placeholder="Address">
           </div>
           <div class="form-group">
             <input type="submit" class="btn btn-default">

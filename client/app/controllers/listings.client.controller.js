@@ -88,6 +88,8 @@ angular.module('listings').controller('ListingsController', ['$scope', '$locatio
          return false;
        }
 
+       var id = $stateParams.listingId; //get id
+
        //creating listing
        var listing = {
          name: $scope.name,
@@ -95,10 +97,8 @@ angular.module('listings').controller('ListingsController', ['$scope', '$locatio
          address: $scope.address
        };
 
-       var id = $stateParams.listingId; //get id
 
-       Listings.update(id, listing).
-              .then(function(response) {
+       Listings.update(id, listing).then(function(response) {
            $state.go('listings.list', { successMessage: 'Listing succesfully created!' });
          }, function(error) {
            $scope.error = 'Unable to update listing!\n' + error;
@@ -115,8 +115,7 @@ angular.module('listings').controller('ListingsController', ['$scope', '$locatio
 
        var id = $stateParams.listingId; //get id
 
-       Listings.delete(id).
-              .then(function(response) {
+       Listings.delete(id).then(function(response) {
            $state.go('listings.list', { successMessage: 'Listing succesfully deleted!' });
          }, function(error) {
            $scope.error = 'Unable to delete listing!\n' + error;
