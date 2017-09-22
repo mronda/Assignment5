@@ -13,7 +13,7 @@
     <ui-gmap-google-map center="map.center" zoom ="map.zoom">
       <ui-gmap-markers models="listings" coords="'coordinates'" icon="'icon'" idkey="'_id'" click = "onClick">
       <ui-gmap-windows show="show">
-          <div ng-non-bindable>{{name}} : {{code}<br>{{address}}}</div>
+          <div ng-non-bindable><a>{{name}}</a></br><a>{{code}}</a></br> <a>{{address}}</a></div>
       </ui-gmap-windows>
   </ui-gmap-markers>
   </ui-gmap-google-map>
